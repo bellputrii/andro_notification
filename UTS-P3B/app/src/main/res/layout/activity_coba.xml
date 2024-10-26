@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <include
+        android:id="@+id/main_tool"
+        layout="@layout/layout_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_tool">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/instagram_logo"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" " />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_04"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/user_story"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Cerita Anda"
+            app:layout_constraintStart_toStartOf="@id/img_04"
+            app:layout_constraintTop_toBottomOf="@id/img_04" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_05"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/asset_story"
+            app:layout_constraintStart_toEndOf="@id/img_04"
+            app:layout_constraintTop_toBottomOf="@id/img_01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Assets"
+            app:layout_constraintStart_toEndOf="@id/txt_02"
+            app:layout_constraintTop_toBottomOf="@id/img_05" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_06"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/liga_story"
+            app:layout_constraintStart_toEndOf="@id/img_05"
+            app:layout_constraintTop_toBottomOf="@id/img_01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Liga"
+            app:layout_constraintStart_toEndOf="@id/img_05"
+            app:layout_constraintTop_toBottomOf="@id/img_06" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_07"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/asset_story"
+            app:layout_constraintStart_toEndOf="@id/img_06"
+            app:layout_constraintTop_toBottomOf="@id/img_01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Assets"
+            app:layout_constraintStart_toEndOf="@id/img_06"
+            app:layout_constraintTop_toBottomOf="@id/img_07" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_08"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/liga_story"
+            app:layout_constraintStart_toEndOf="@id/img_07"
+            app:layout_constraintTop_toBottomOf="@id/img_01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Liga"
+            app:layout_constraintStart_toEndOf="@id/img_07"
+            app:layout_constraintTop_toBottomOf="@id/img_08" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_09"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/fufufafa_pp"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="@id/img_01"
+            app:layout_constraintTop_toBottomOf="@id/txt_02" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Fufufafa"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/txt_02"
+            app:layout_constraintTop_toBottomOf="@id/txt_03" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Putra Mulyono"
+            app:layout_constraintStart_toStartOf="@id/txt_07"
+            app:layout_constraintTop_toBottomOf="@id/txt_07" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="45dp"
+            android:src="@drawable/ic_titik_tiga"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_05" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_11"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:src="@drawable/post_fufufafa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_07" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintStart_toStartOf="@id/img_09"
+            app:layout_constraintTop_toBottomOf="@id/img_11" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_comment"
+            app:layout_constraintStart_toEndOf="@id/img_12"
+            app:layout_constraintTop_toBottomOf="@id/img_11" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintStart_toEndOf="@id/img_13"
+            app:layout_constraintTop_toBottomOf="@id/img_11" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_bookmark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_11" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disukai oleh Ikhwan_Hanif"
+            app:layout_constraintStart_toStartOf="@id/img_12"
+            app:layout_constraintTop_toBottomOf="@+id/img_15" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fufufafa"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/img_12"
+            app:layout_constraintTop_toBottomOf="@+id/txt_09" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="#Proud"
+            android:textColor="@color/blue"
+            app:layout_constraintStart_toEndOf="@id/txt_10"
+            app:layout_constraintTop_toBottomOf="@+id/txt_09" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tampilkan 10 komentar lainnya"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="@id/img_12"
+            app:layout_constraintTop_toBottomOf="@+id/txt_11" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_16"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/assets_ugm_pp"
+            app:layout_constraintStart_toStartOf="@id/img_09"
+            app:layout_constraintTop_toBottomOf="@id/txt_12" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="assets_ugm"
+            app:layout_constraintStart_toEndOf="@id/img_16"
+            app:layout_constraintTop_toBottomOf="@id/txt_12"
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="673dp">
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
