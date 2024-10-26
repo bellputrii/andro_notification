@@ -1,59 +1,67 @@
 package com.bell.logintabs
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var inputEmail: TextInputEditText
+    private lateinit var inputPassword: TextInputEditText
+    private lateinit var btnLogin: Button
+    private lateinit var checkbox: CheckBox
+    private lateinit var registerText: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+
+        inputEmail = view.findViewById<TextInputLayout>(R.id.input_username_login).editText as TextInputEditText
+        inputPassword = view.findViewById<TextInputLayout>(R.id.input_password).editText as TextInputEditText
+        btnLogin = view.findViewById(R.id.btn_login_button)
+        checkbox = view.findViewById(R.id.checkbox)
+        registerText = view.findViewById(R.id.register_text)
+
+        btnLogin.setOnClickListener {
+            performLogin()
+        }
+
+        registerText.setOnClickListener {
+            // Arahkan ke HomeActivity saat registrasi diklik
+            val username = inputEmail.text.toString() // Gunakan email sebagai username
+            navigateToHome(username)
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun performLogin() {
+        val email = inputEmail.text.toString()
+        val password = inputPassword.text.toString()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            // Tampilkan pesan kesalahan
+            return
+        }
+
+        // Arahkan ke HomeActivity dengan username
+        navigateToHome(email)
+    }
+
+    private fun navigateToHome(username: String) {
+        val intent = Intent(requireActivity(), HomeActivity::class.java)
+        intent.putExtra("USERNAME", username) // Kirim username ke HomeActivity
+        startActivity(intent)
+        requireActivity().finish() // Tutup LoginActivity jika diperlukan
     }
 }

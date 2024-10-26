@@ -1,14 +1,422 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/bank_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Pagi, Belda Putri Pramono"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"/>
+    <ImageView
+        android:id="@+id/img_bni"
+        android:layout_width="200dp"
+        android:layout_height="170dp"
+        android:src="@drawable/bank_bni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal"
+        />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo Anda"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_bni">
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/saldo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belda Putri Pramono"
+                android:textSize="17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BNI Taplus Muda | 7263 - 2938 - 2390  ***"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_marginStart="45dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/arrow_down"
+                app:layout_constraintStart_toEndOf="@id/txt_2"
+                app:layout_constraintTop_toTopOf="@id/txt_2" />
+
+            <TextView
+                android:id="@+id/txt_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 150000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/txt_2"
+                app:layout_constraintTop_toBottomOf="@id/txt_2"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:id="@+id/togglePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle visibility"
+                android:src="@drawable/baseline_remove_red_eye_24"
+                app:layout_constraintStart_toEndOf="@id/txt_3"
+                app:layout_constraintTop_toBottomOf="@id/txt_2"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:text="Tarik Tunai"
+                android:backgroundTint="@color/orange"
+                app:layout_constraintStart_toStartOf="@id/txt_3"
+                app:layout_constraintTop_toBottomOf="@id/txt_3"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:text="Setor Tunai"
+                android:backgroundTint="@color/orange"
+                app:layout_constraintStart_toEndOf="@id/button_1"
+                app:layout_constraintTop_toBottomOf="@id/txt_3"
+                android:layout_marginTop="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shortcut Kamu"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img_2"
+        app:layout_constraintStart_toStartOf="@id/saldo"
+        android:layout_margin="20dp"
+        >
+    </TextView>
+    <ImageView
+        android:id="@+id/img_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gambar_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        app:layout_constraintStart_toStartOf="@id/txt_04"
+        android:layout_margin="10dp"
+        >
+    </ImageView>
+    <ImageView
+        android:id="@+id/img_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gambar_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        app:layout_constraintStart_toEndOf="@id/img_3"
+        android:layout_margin="10dp"
+        >
+    </ImageView>
+    <ImageView
+        android:id="@+id/img_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gambar_1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/img_3"
+        app:layout_constraintStart_toStartOf="@id/img_3">
+    </ImageView>
+    <ImageView
+        android:id="@+id/img_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gambar_1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/img_3"
+        app:layout_constraintStart_toStartOf="@id/img_4">
+    </ImageView>
+    <ImageView
+        android:id="@+id/icon_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/transfer"
+        android:layout_margin="25dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        app:layout_constraintStart_toStartOf="@id/txt_04"
+        >
+    </ImageView>
+    <ImageView
+        android:id="@+id/icon_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/phone"
+        android:layout_margin="25dp"
+        app:layout_constraintTop_toBottomOf="@id/img_4"
+        app:layout_constraintStart_toStartOf="@id/txt_04">
+    </ImageView>
+    <ImageView
+        android:id="@+id/icon_3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/va"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        app:layout_constraintStart_toStartOf="@id/img_4">
+    </ImageView>
+    <ImageView
+        android:id="@+id/icon_4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/menu"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/img_4"
+        app:layout_constraintStart_toStartOf="@id/img_4">
+    </ImageView>
+    <TextView
+        android:id="@+id/txt_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transfer Uang"
+        app:layout_constraintStart_toEndOf="@id/icon_1"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/txt_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Virtual Account"
+        app:layout_constraintStart_toEndOf="@id/icon_3"
+        app:layout_constraintTop_toBottomOf="@id/txt_04"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="5dp"
+        tools:ignore="DuplicateIds">
+    </TextView>
+    <TextView
+        android:id="@+id/txt_6_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsa / Data"
+        app:layout_constraintStart_toEndOf="@id/icon_2"
+        app:layout_constraintTop_toBottomOf="@id/img_4"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="5dp"
+        tools:ignore="DuplicateIds">
+    </TextView>
+    <TextView
+        android:id="@+id/txt_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu Lengkap"
+        app:layout_constraintStart_toEndOf="@id/icon_4"
+        app:layout_constraintTop_toBottomOf="@id/img_4"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="5dp">
+    </TextView>
+    <TextView
+        android:id="@+id/txt_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insight BNI"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img_5"
+        app:layout_constraintStart_toStartOf="@id/saldo"
+        android:layout_margin="20dp">
+    </TextView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_8"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView_1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView_2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView_1"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pict_2" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
